@@ -1,0 +1,10 @@
+title: rackham
+author: Kelly Sovacool
+version: 1.0.0
+quarto-required: ">=1.2.0"
+contributes:
+  formats:
+    pdf:
+      toc: true
+      include-in-header: header.tex
+
