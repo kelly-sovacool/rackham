@@ -40,7 +40,7 @@ format:
     keep-tex: true
 ```
 
-You can view a preview of the rendered template at TODO
+You can preview the rendered template at <http://sovacool.dev/rackham/>
 
 <!--
 ## Format Options
