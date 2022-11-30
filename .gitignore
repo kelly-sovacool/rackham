@@ -10,3 +10,7 @@
 *.swp
 *.synctex.gz
 *.toc
+
+/.quarto/
+/template.pdf
+/rackham.cls
