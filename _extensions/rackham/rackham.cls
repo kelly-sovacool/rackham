@@ -49,14 +49,16 @@
 %%  2019.08.30 @Umang Varma       : Remove various code that can be found
 %%                                  in widely available packages. Address
 %%                                  changes in Rackham guidelines.
-%%
+%%  2022.12.01 @Kelly Sovacool    : Modifications for use with Quarto.
+%%                                  Renamed class from `thesis-umich' to 
+%%                                  `rackham'.
 
 %% ---- HEADERS --------------------------------------------------------
 % This prevents the compiler from running on old versions of LaTeX.
 \NeedsTeXFormat{LaTeX2e}
 
 % This command gives the name of the class.
-\ProvidesClass{thesis-umich}[UMich Thesis template]
+\ProvidesClass{rackham}[UMich Rackham dissertation template]
 
 %% ---- OPTIONS PROCESSING ---------------------------------------------
 % Define three switches for the the thesis format types.
@@ -1281,4 +1283,3 @@
   \twocolumn %
  \fi %
 }
-

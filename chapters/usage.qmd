@@ -1,0 +1,22 @@
+# Using This Template
+
+The approach to this template is to result in \LaTeX~source files (i.e.,
+\texttt{.tex} files) that are as simple as possible %[@knuth_1986_tex].  
+This is particularly
+useful for the first few pages, for example the title page, dedication, and
+abstract page, which are difficult to make in \LaTeX~and are supposed to go in
+a certain order.
+
+You are welcome to modify \texttt{thesis-umich.cls} to suit your needs or keep
+up with modifications to Rackham guidelines. I used this template to submit my
+dissertation in 2019, but Rackham can change their rules at any time. If you
+have not modified a \texttt{.cls} file before, but know how to define commands
+in \TeX, you should not have much trouble, apart from the sneaky \verb=@=
+character, which behaves like a letter in \texttt{.cls} files but not in
+\texttt{.tex} (see \href{https://tex.stackexchange.com/q/8351/21027}{``What do
+  \texttt{\textbackslash makeatletter} and \texttt{\textbackslash makeatother}
+do?'' on \TeX\ StackOverflow} and
+\href{https://tug.org/pipermail/tugindia/2002-January/000178.html}{``Makeatletter
+and Makeatother'' on the \TeX\ Users Group} for more information).
+
+Finally, you should be able to use your preferred bibliography manager (BibTex, BibLaTeX, NatBib, etc.). If the \texttt{\textbackslash bibliography} command is giving you trouble, look in \texttt{thesis-umich.cls}, because it was modified there. You can also look at that code for help with formatting bibliographies that are displayed with other commands.
