@@ -1283,3 +1283,11 @@
   \twocolumn %
  \fi %
 }
+
+% ------------------------------------------------------------------------------
+% for compatibility with Quarto 
+%-------------------------------------------------------------------------------
+\RequirePackage{bookmark}
+\newenvironment{CSLReferences}%
+  {}%
+  {\par}
