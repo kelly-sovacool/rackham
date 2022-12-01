@@ -12,4 +12,4 @@ contributes:
       include-in-header: header.tex
       format-resources:
         - rackham.cls
-      template: partials/thesis-sample.tex
+      template: rackham-template.tex

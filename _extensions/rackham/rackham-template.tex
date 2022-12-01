@@ -16,19 +16,37 @@ $for(authors)$
 $endfor$
 
 % Department
+$if(dept)$
 \department{$dept$}
-
+$endif$
 % Year of completion
+$if(date)$
 \year=$date$
+$endif$
 
+$if(dedication)$
 \dedication{$dedication$}
-
+$endif$
+$if(acknowledgements)$
 \acknowledgments{$acknowledgements$}
+$endif$
 
+$if(preface)$
 \preface{$preface$}
+$endif$
+
+$if(committee)$
 \committee{$for(committee)$$it$$sep$ \\
  $endfor$}
+$endif$
 
+$if(abstract)$
+\abstract{$abstract$}
+$endif$
+
+$if(bibliography)$
+\bibliography{$bibliography$}
+$endif$
 
 % Commands to hide or show lists of figures, tables, etc.
 %\showlistoffigures
@@ -54,36 +72,8 @@ $endfor$
 % \acro{LS&A}{Literature Science and Arts}
 %}
 
-% Some abstract text
-\abstract{$abstract$}
-
-\titleformat{\section} %\titleformat*{\section}{\center\bfseries}
-    {\center\normalfont\Large\bfseries}{\thesection}{1em}{} 
-\titleformat{\subsection} %\titleformat*{\subsection}{\bfseries}
-    {\normalfont\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection} %\titleformat*{\subsubsection}{\bfseries}
-    {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 \begin{document}
 
 $body$
-
-
-\appendix
-\chapter{Example Appendix}
-
-\section{Lists Including the Appendices}
-The command
-\begin{verbatim}
-\showlistofappendices
-\end{verbatim}
-must appear in the preamble if there are more than one appendices.  For
-some reason, Rackham does not want the individual appendices and their
-sections to appear in the Table of Contents, so a special List of
-Appendices page (which must occur in the Table of Contents!) is required
-as a sort of extension to the Table of Contents.
-
-
-%\bibliographystyle{alpha}
-%\bibliography{$bibliography$}
 
 \end{document}

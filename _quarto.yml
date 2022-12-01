@@ -14,6 +14,7 @@ book:
     - index.qmd
     - chapters/usage.qmd
     - chapters/discussion.qmd
+    - references.qmd
 
 dept: Mathematics
 preface: |
@@ -31,10 +32,16 @@ abstract: |
 committee:
   - Professor John D. Brown, Co-Chair
   - Professor Emeritus Ann A. Smith, Co-Chair
+  - Dr. Alicia Gonzalez, Mellon Foundation
+  - Assistant Professor Charles Z. Jones
+  - Associate Professor Kathleen X. Lee, Yale University
+  - Associate Professor Horace H. Rackham
 
 bibliography: references.bib
+fontsize: 12pt
 format:
   rackham-pdf:
     keep-tex: true
+    cite-method: biblatex
     classoption: 
       - thesis

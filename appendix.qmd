@@ -1,0 +1,15 @@
+# Example Appendix
+
+TODO: get this to appear in TOC correctly
+
+## Lists Including the Appendices
+
+The command
+\begin{verbatim}
+\showlistofappendices
+\end{verbatim}
+must appear in the preamble if there are more than one appendices.  For
+some reason, Rackham does not want the individual appendices and their
+sections to appear in the Table of Contents, so a special List of
+Appendices page (which must occur in the Table of Contents!) is required
+as a sort of extension to the Table of Contents.

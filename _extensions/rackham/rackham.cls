@@ -707,7 +707,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf TABLE OF CONTENTS} %
+ \centerline{\large\bfseries TABLE OF CONTENTS} %
  % Add some space after the title.
  \vspace{2ex} %
  % Start the automatic table of contents features.
@@ -734,7 +734,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF FIGURES}
+ \centerline{\large\bfseries LIST OF FIGURES}
  % Add some space after the title.
  \vspace{2em} %
  \ \\
@@ -763,7 +763,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF TABLES} %
+ \centerline{\large\bfseries LIST OF TABLES} %
  % Add some space after the title.
  \vspace{2em} %
  \ \\
@@ -797,7 +797,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF MAPS} %
+ \centerline{\large\bfseries LIST OF MAPS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic table of contents features.
@@ -829,7 +829,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF ILLUSTRATIONS} %
+ \centerline{\large\bfseries LIST OF ILLUSTRATIONS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic table of contents features.
@@ -859,7 +859,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF APPENDICES} %
+ \centerline{\large\bfseries LIST OF APPENDICES} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic table of contents features.
@@ -944,7 +944,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF ABBREVIATIONS} %
+ \centerline{\large\bfseries LIST OF ABBREVIATIONS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic abbreviations feature.
@@ -983,7 +983,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF ACRONYMS} %
+ \centerline{\large\bfseries LIST OF ACRONYMS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic abbreviations feature.
@@ -1022,7 +1022,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF SYMBOLS} %
+ \centerline{\large\bfseries LIST OF SYMBOLS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic symbols feature.
@@ -1160,11 +1160,11 @@
   % Check for chapter overflow.
   \ifnum \c@secnumdepth >\m@ne %
    % CHAPTER and number
-   \centerline{\large\bf \@chapapp{} \thechapter} \par %
+   \centerline{\large\bfseries \@chapapp{} \thechapter} \par %
    % Vertical space
    \vskip 0.3in \fi %
    % Insert the title of the chapter.
-   \begin{center} \large\bf #1 \end{center} %
+   \begin{center} \large\bfseries #1 \end{center} %
    % Vertical space after the title
    \nobreak \vskip 0.3in %
  } %
@@ -1173,10 +1173,11 @@
 %% ---- SECTION HEADINGS -----------------------------------------------
 \RequirePackage{titlesec}
 
-\titleformat*{\section}{\center\bfseries}
-\titleformat*{\subsection}{\bfseries}
-\titleformat*{\subsubsection}{\bfseries}
-
+\titleformat{\section}{\center\Large\bfseries}{\thesection}{1em}{}  %\titleformat*{\section}{\center\bfseries}
+    
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{} %\titleformat*{\subsection}{\bfseries}
+    
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{} %\titleformat*{\subsubsection}{\bfseries}
 
 %% ---- LINKS ----------------------------------------------------------
 % This loads a package that allows extra colors for links.
@@ -1273,7 +1274,7 @@
  \renewcommand{\thepage}{\arabic{page}} %
  % Add the word 'Chapter' to the table of contents.
  \addtocontents{toc}{\vspace{1.3ex}\noindent %
- {\bf Chapter}\vspace{1.3ex}} %
+ {\bfseries Chapter}\vspace{1.3ex}} %
  % Use the correct formatting.
  \if@umich@thesis %
   % Use 1.5 spacing
@@ -1291,3 +1292,5 @@
 \newenvironment{CSLReferences}%
   {}%
   {\par}
+
+\RequirePackage[backend=biber, style=numeric, citestyle=numeric, sorting=none]{biblatex}
