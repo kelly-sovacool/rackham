@@ -42,6 +42,5 @@ fontsize: 12pt
 format:
   rackham-pdf:
     keep-tex: true
-    cite-method: biblatex
     classoption: 
       - thesis

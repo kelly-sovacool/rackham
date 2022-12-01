@@ -1,4 +1,3 @@
 # Bibliography {.unnumbered}
 
-::: {#refs}
-:::
+\printbibliography

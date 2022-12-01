@@ -9,7 +9,13 @@ contributes:
         echo: false
     pdf:
       documentclass: rackham
+      cite-method: biblatex
+      biblio-style: msystems
+      biblio-config: false
+      #csl: asm.csl
       include-in-header: header.tex
       format-resources:
         - rackham.cls
+        - msystems.bst
+        - asm.csl
       template: rackham-template.tex

@@ -1095,6 +1095,9 @@
 
 
 %% ---- BIBLIOGRAPHY ---------------------------------------------------
+
+\RequirePackage[backend=biber, style=numeric, citestyle=numeric, sorting=none]{biblatex}
+
 % Save the original bibliography command.
 \let\@tex@bibliography\bibliography
 
@@ -1287,10 +1290,28 @@
 
 % ------------------------------------------------------------------------------
 % for compatibility with Quarto 
+% and updates to the guidelines ca. ~2020
 %-------------------------------------------------------------------------------
 \RequirePackage{bookmark}
+
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
 \newenvironment{CSLReferences}%
-  {}%
+  {\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
   {\par}
 
-\RequirePackage[backend=biber, style=numeric, citestyle=numeric, sorting=none]{biblatex}
+% \RequirePackage[numbers,round]{natbib}
+% \RequirePackage{multicol}
+% %\RequirePackage[noperiod]{jabbrv}
+% %\DefineJournalAbbreviation{National}{Natl}
+% %% Renamed vancouver-asm.bst to msystems.bst on 12 July, 2019
+% \bibliographystyle{msystems}
+% \renewcommand{\bibnumfmt}[1]{\makebox[1.5em][l]{#1.}}
+% \renewcommand{\bibfont}{\footnotesize}
+% \setlength{\bibsep}{0pt}
+% \renewcommand{\bibpreamble}{
+%   %\nolinenumbers
+%   \setlength{\multicolsep}{0pt}
+% }
+% \preto{\endthebibliography}{}
