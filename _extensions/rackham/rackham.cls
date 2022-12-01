@@ -56,7 +56,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
 % This command gives the name of the class.
-\ProvidesClass{thesis-umich}[UMich Thesis template]
+\ProvidesClass{rackham}[UMich Rackham dissertation template]
 
 %% ---- OPTIONS PROCESSING ---------------------------------------------
 % Define three switches for the the thesis format types.
@@ -99,7 +99,7 @@
 
 
 % This passes any other options on to the 'report' class.
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}%
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrreprt}%
  \typeout{Unknown option: passing ``\CurrentOption"
   option on to the standard LaTeX report class.}}
 % This command tells LaTeX to simply process the class options.
@@ -112,7 +112,7 @@
  \LoadClass[letterpaper,10pt,twoside]{report}
 \else
  % Call the report class with 12pt fonts and one-sided formatting.
- \LoadClass[letterpaper,12pt,oneside]{report}
+ \LoadClass[letterpaper,12pt,oneside]{scrreprt}
 \fi
 
 
@@ -332,10 +332,10 @@
 
 %% ---- FRONTISPIECE ---------------------------------------------------
 % Command for the frontispiece
-\newcommand{\@frontispiece}{\@empty}
+\renewcommand{\@frontispiece}{\@empty}
 
 % Command to set the frontispiece
-\newcommand{\frontispiece}[1]{
+\renewcommand{\frontispiece}[1]{
  % Turn the frontispiece on.
  \@umich@frontispiecetrue %
  % Set the frontispiece.
@@ -456,14 +456,14 @@
 
 %% ---- DEDICATION PAGE ------------------------------------------------
 % Command that holds the value text of the dedication
-\newcommand{\@dedication}{}
+\renewcommand{\@dedication}{}
 % Command that sets the dedication style
 \newcommand{\@dedicationstyle}{\@frontpagestyle}
 % Command that sets the width of the dedication text area
 \newcommand{\@dedication@width}{1}
 
 % Command to change it from the default
-\newcommand{\dedication}[2][]{ %
+\renewcommand{\dedication}[2][]{ %
  % Show the dedication.
  \showdedication %
  % Set the dedication text.
@@ -705,7 +705,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf TABLE OF CONTENTS} %
+ \centerline{\large\bfseries TABLE OF CONTENTS} %
  % Add some space after the title.
  \vspace{2ex} %
  % Start the automatic table of contents features.
@@ -732,7 +732,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF FIGURES}
+ \centerline{\large\bfseries LIST OF FIGURES}
  % Add some space after the title.
  \vspace{2em} %
  \ \\
@@ -761,7 +761,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF TABLES} %
+ \centerline{\large\bfseries LIST OF TABLES} %
  % Add some space after the title.
  \vspace{2em} %
  \ \\
@@ -795,7 +795,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF MAPS} %
+ \centerline{\large\bfseries LIST OF MAPS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic table of contents features.
@@ -827,7 +827,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF ILLUSTRATIONS} %
+ \centerline{\large\bfseries LIST OF ILLUSTRATIONS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic table of contents features.
@@ -857,7 +857,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF APPENDICES} %
+ \centerline{\large\bfseries LIST OF APPENDICES} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic table of contents features.
@@ -942,7 +942,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF ABBREVIATIONS} %
+ \centerline{\large\bfseries LIST OF ABBREVIATIONS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic abbreviations feature.
@@ -981,7 +981,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF ACRONYMS} %
+ \centerline{\large\bfseries LIST OF ACRONYMS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic abbreviations feature.
@@ -1020,7 +1020,7 @@
   \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  \fi %
  % Add the title
- \centerline{\large\bf LIST OF SYMBOLS} %
+ \centerline{\large\bfseries LIST OF SYMBOLS} %
  % Add some space after the title.
  \vspace{1ex} %
  % Start the automatic symbols feature.
@@ -1158,11 +1158,11 @@
   % Check for chapter overflow.
   \ifnum \c@secnumdepth >\m@ne %
    % CHAPTER and number
-   \centerline{\large\bf \@chapapp{} \thechapter} \par %
+   \centerline{\large\bfseries \@chapapp{} \thechapter} \par %
    % Vertical space
    \vskip 0.3in \fi %
    % Insert the title of the chapter.
-   \begin{center} \large\bf #1 \end{center} %
+   \begin{center} \large\bfseries #1 \end{center} %
    % Vertical space after the title
    \nobreak \vskip 0.3in %
  } %
@@ -1171,11 +1171,12 @@
 %% ---- SECTION HEADINGS -----------------------------------------------
 \RequirePackage{titlesec}
 
-\titleformat*{\section}{\center\bfseries}
-\titleformat*{\subsection}{\bfseries}
-\titleformat*{\subsubsection}{\bfseries}
-
-
+\titleformat{\section} %\titleformat*{\section}{\center\bfseries}
+    {\center\normalfont\Large\bfseries}{\thesection}{1em}{} 
+\titleformat{\subsection} %\titleformat*{\subsection}{\bfseries}
+    {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection} %\titleformat*{\subsubsection}{\bfseries}
+    {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 %% ---- LINKS ----------------------------------------------------------
 % This loads a package that allows extra colors for links.
 \RequirePackage[usenames,dvipsnames]{xcolor}
@@ -1271,7 +1272,7 @@
  \renewcommand{\thepage}{\arabic{page}} %
  % Add the word 'Chapter' to the table of contents.
  \addtocontents{toc}{\vspace{1.3ex}\noindent %
- {\bf Chapter}\vspace{1.3ex}} %
+ {\bfseries Chapter}\vspace{1.3ex}} %
  % Use the correct formatting.
  \if@umich@thesis %
   % Use 1.5 spacing
