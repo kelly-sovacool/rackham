@@ -1,2 +1,4 @@
 /style-guide linguist-vendored=true
+/_extensions/rackham/thesis-umich.cls linguist-vendored=true
+/_extensions/rackham/header-tex linguist-vendored=true
 *.bib linguist-vendored=true
