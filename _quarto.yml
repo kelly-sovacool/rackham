@@ -14,7 +14,6 @@ book:
     - index.qmd
     - chapters/usage.qmd
     - chapters/discussion.qmd
-    - references.qmd
 
 dept: Mathematics
 preface: |

@@ -8,11 +8,15 @@ $for(classoption)$
 $classoption$$sep$,
 $endfor$]{thesis-umich}
 
+$for(header-includes)$
+$header-includes$
+$endfor$
+
 \title{$title$}
 $for(authors)$
     \author{$it.name.literal$}
-    \authoremail{$it.email$}
-    \orcidid{$it.orcid$}
+    \email{$it.email$}
+    \orcid{$it.orcid$}
 $endfor$
 
 % Department
@@ -61,11 +65,6 @@ $if(abstract)$
 \abstract{$abstract$}
 $endif$
 
-$if(bibliography)$
-\bibliographystyle{plain}
-\bibliography{$bibliography$}
-$endif$
-
 % Commands to hide or show lists of figures, tables, etc.
 %\showlistoffigures
 %\showlistoftables
@@ -89,5 +88,10 @@ $endif$
 \begin{document}
 
 $body$
+
+$if(bibliography)$
+\bibliographystyle{plain}
+\bibliography{$bibliography$}
+$endif$
 
 \end{document}
