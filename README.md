@@ -1,18 +1,18 @@
 # Rackham Dissertation Format
 
-A Quarto template for U-M Rackham dissertations. 
-Based on the unofficial [thesis-umich](https://github.com/umangv/thesis-umich) LaTeX template.
+A Quarto template for U-M Rackham dissertations.
+Based on the unofficial [thesis-umich](https://github.com/meluso/UMich_Dissertation_Template) LaTeX template.
 
 Rackham has stringent [formatting guidelines](https://rackham.umich.edu/navigating-your-degree/formatting-guidelines/), 
 yet refuses to provide a template 🧐.
-Using this unofficial template does not guarantee that you will meet their 
+Using this unofficial template does not guarantee that you will meet their
 formatting guidelines.
 
 ## Installing
 
 ### For a new document
 
-You can use this as a template to create a new dissertation. 
+You can use this as a template to create a new dissertation.
 To do this, use the following command:
 
 ```bash
@@ -40,14 +40,9 @@ format:
     keep-tex: true
 ```
 
-You can preview the rendered template at <http://sovacool.dev/rackham/>
+You can also optionally specify author metadata, chapter and appendix files,
+and text for the abstract, dedication, preface, etc.
+Take a look at `_quarto.yml` for examples of all the format options you can set.
 
-<!--
-## Format Options
+Preview the rendered template at <http://sovacool.dev/rackham/>
 
-*TODO*: If your format has options that can be set via document metadata, describe them.
-
-## Example
-
-Here is the source code for a minimal sample document: [template.qmd](template.qmd).
--->
