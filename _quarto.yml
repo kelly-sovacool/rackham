@@ -14,6 +14,9 @@ book:
     - index.qmd
     - chapters/usage.qmd
     - chapters/discussion.qmd
+  appendices:
+    - chapters/appendix-a.qmd
+    - chapters/appendix-b.qmd
 
 dept: Mathematics
 preface: |
@@ -46,6 +49,11 @@ acronyms:
   \acro{TLA}{Three Letter Acronym}
   \acro{SOA}{Some Other Acronym}
 frontispiece: frontispiece.png
+list-commands: # toggle show/hide for each list
+  - \showlistoffigures
+  - \showlistoftables
+  - \showlistofappendices
+  - \showlistofacronyms
 
 bibliography: references.bib
 fontsize: 12pt

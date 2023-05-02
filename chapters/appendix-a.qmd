@@ -2,8 +2,6 @@
 
 TODO: get this to appear in TOC correctly
 
-## Lists Including the Appendices
-
 The command
 \begin{verbatim}
 \showlistofappendices

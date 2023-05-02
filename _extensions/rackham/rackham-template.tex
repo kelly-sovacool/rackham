@@ -66,6 +66,9 @@ $if(abstract)$
 $endif$
 
 % Commands to hide or show lists of figures, tables, etc.
+$for(list-commands)$
+$list-commands$
+$endfor$
 %\showlistoffigures
 %\showlistoftables
 %\showlistofmaps
@@ -73,7 +76,7 @@ $endif$
 %\showlistofappendices
 %\showlistofabbreviations
 %\showlistofacronyms
-%\showlistofsymbos
+%\showlistofsymbols
 % OR
 %\hidelistoffigures
 %\hidelistoftables
