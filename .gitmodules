@@ -1,0 +1,3 @@
+[submodule "style-guide/UMich_Dissertation_Template"]
+	path = style-guide/UMich_Dissertation_Template
+	url = https://github.com/meluso/UMich_Dissertation_Template
