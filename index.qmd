@@ -1,6 +1,3 @@
 # Introduction
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
-
-You can learn more about controlling the appearance of PDF output here: <https://quarto.org/docs/output-formats/pdf-basics.html>
-
+You can learn more about controlling the appearance of Quarto PDF output here: <https://quarto.org/docs/output-formats/pdf-basics.html>

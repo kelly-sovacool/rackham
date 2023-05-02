@@ -8,14 +8,11 @@ contributes:
       execute:
         echo: false
     pdf:
-      documentclass: rackham
-      cite-method: biblatex
-      biblio-style: msystems
+      documentclass: thesis-umich
+      cite-method: natbib
+      biblio-style: plain
       biblio-config: false
-      #csl: asm.csl
       include-in-header: header.tex
       format-resources:
-        - rackham.cls
-        - msystems.bst
-        - asm.csl
+        - thesis-umich.cls
       template: rackham-template.tex
