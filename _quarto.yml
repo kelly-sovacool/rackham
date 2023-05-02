@@ -20,7 +20,7 @@ book:
 
 dept: Mathematics
 preface: |
-  This dissertation is a sample document using the \texttt{rackham.cls}
+  This dissertation is a sample document using the \texttt{thesis-umich.cls}
   template.
 dedication: |
   This manual is dedicated to all doctoral students at the University of
