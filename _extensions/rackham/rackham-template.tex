@@ -6,7 +6,7 @@ $papersize$paper,
 $endif$
 $for(classoption)$
 $classoption$$sep$,
-$endfor$]{rackham}
+$endfor$]{thesis-umich}
 
 \title{$title$}
 $for(authors)$
@@ -24,20 +24,37 @@ $if(date)$
 \year=$date$
 $endif$
 
-$if(dedication)$
-\dedication{$dedication$}
-$endif$
-$if(acknowledgements)$
-\acknowledgments{$acknowledgements$}
+
+$if(frontispiece)$
+\frontispiece{\includegraphics[width=4in]{$frontispiece$}}
 $endif$
 
+% Default style for front pages
+\frontpagestyle{7} % 7 is preferred by Rackham, but should be set individually for each front page
+
+$if(dedication)$
+\dedication[7]{$dedication$}
+$endif$
+$if(acknowledgements)$
+\acknowledgments[7]{$acknowledgements$}
+$endif$
 $if(preface)$
-\preface{$preface$}
+\preface[7]{$preface$}
 $endif$
 
 $if(committee)$
 \committee{$for(committee)$$it$$sep$ \\
  $endfor$}
+$endif$
+$if(chair)$
+\chair{$chair$}
+$endif$
+$if(cochair)$
+\cochair($cochair$)
+$endif$
+
+$if(acronyms)$
+\acronyms{$acronyms$}
 $endif$
 
 $if(abstract)$
@@ -45,6 +62,7 @@ $if(abstract)$
 $endif$
 
 $if(bibliography)$
+\bibliographystyle{plain}
 \bibliography{$bibliography$}
 $endif$
 
@@ -67,10 +85,6 @@ $endif$
 %\hidelistofacronyms
 %\hidelistofsymbols
 
-% Definition of any abbreviations used.
-%\abbreviations{
-% \acro{LS&A}{Literature Science and Arts}
-%}
 
 \begin{document}
 
