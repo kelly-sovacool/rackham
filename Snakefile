@@ -1,5 +1,5 @@
 
-SUBMOD_DIR = '_extensions/rackham/UMich_Dissertation_template'
+SUBMOD_DIR = '_extensions/rackham/UMich_Dissertation_Template'
 EXT_DIR = '_extensions/rackham'
 
 rule copy_submod_files:
