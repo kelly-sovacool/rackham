@@ -12,7 +12,9 @@ contributes:
       cite-method: natbib
       biblio-style: plain
       biblio-config: false
-      include-in-header: header.tex
+      include-in-header:
+        - header.tex
+        - UMich_Dissertation_Template/packages.tex
       format-resources:
-        - thesis-umich.cls
-      template: rackham-template.tex
+        - UMich_Dissertation_Template/thesis-umich.cls
+      template: template.tex

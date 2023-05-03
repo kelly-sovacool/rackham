@@ -1,6 +1,3 @@
 [submodule "style-guide/UMich_Dissertation_Template"]
-	path = style-guide/UMich_Dissertation_Template
+	path = _extensions/rackham/UMich_Dissertation_Template
 	url = https://github.com/meluso/UMich_Dissertation_Template
-[submodule "style-guide/umangv-thesis-umich"]
-	path = style-guide/umangv-thesis-umich
-	url = https://github.com/umangv/thesis-umich
