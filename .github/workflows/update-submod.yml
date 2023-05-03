@@ -1,0 +1,38 @@
+name: Update submodule
+on:
+  schedule: "0 1 * * 1"
+  push:
+    branches:
+      - main
+
+env:
+  actor: "41898282+github-actions[bot]"
+
+jobs:
+  update-submod:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Configure git
+      run: |
+        git config --local user.email "${actor}@users.noreply.github.com"
+        git config --local user.name "$actor"
+    - name: Update submodule
+      run: |
+        git submodule update --remote
+    - name: Copy submod files
+      uses: snakemake/snakemake-github-action@v1.24.0
+      with:
+        directory: .
+        snakefile: Snakefile
+        args: "--forcerun copy_submod_files"
+    - name: Commit & Push
+      run: |
+        git add _extensions/rackham/
+        git commit -m "🤖 Update extension from submodule" || echo "No changes to commit"
+        git push
