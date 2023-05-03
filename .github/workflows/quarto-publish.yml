@@ -12,6 +12,8 @@ jobs:
         shell: bash -l {0}
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: recursive
     - name: Set up Quarto
       uses: quarto-dev/quarto-actions/setup@v2
       with:
