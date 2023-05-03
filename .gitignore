@@ -21,3 +21,5 @@
 /dissertation.tex
 /_book/
 /thesis-umich.cls
+
+.snakemake*

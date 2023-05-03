@@ -14,7 +14,7 @@ contributes:
       biblio-config: false
       include-in-header:
         - header.tex
-        - UMich_Dissertation_Template/packages.tex
+        - packages.tex
       format-resources:
-        - UMich_Dissertation_Template/thesis-umich.cls
+        - thesis-umich.cls
       template: template.tex
