@@ -1,6 +1,7 @@
 name: Update submodule
 on:
-  schedule: "0 1 * * 1"
+  schedule:
+    - cron "0 1 * * 1"
   push:
     branches:
       - main
