@@ -31,7 +31,7 @@ jobs:
       with:
         directory: .
         snakefile: Snakefile
-        args: "--forcerun copy_submod_files"
+        args: "--forcerun copy_submod_files -c 1"
     - name: Commit & Push
       run: |
         git add _extensions/rackham/
