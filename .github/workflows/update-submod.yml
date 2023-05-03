@@ -26,6 +26,7 @@ jobs:
     - name: Update submodule
       run: |
         git submodule update --remote
+        ls _extensions/rackham/UMich_Dissertation_template
     - name: Copy submod files
       uses: snakemake/snakemake-github-action@v1.24.0
       with:
