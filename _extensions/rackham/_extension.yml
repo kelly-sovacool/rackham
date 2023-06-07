@@ -9,6 +9,8 @@ contributes:
         echo: false
     pdf:
       documentclass: thesis-umich
+      classoption:
+        - thesis
       cite-method: natbib
       biblio-style: plain
       biblio-config: false
