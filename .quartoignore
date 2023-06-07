@@ -1,3 +1,5 @@
 /_publish.yml
 /style-guide/
 /Snakefile
+/_extensions/rackham/README.md
+/_extensions/rackham/.snakemake*
