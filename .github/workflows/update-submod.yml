@@ -26,14 +26,14 @@ jobs:
     - name: Update submodule
       run: |
         git submodule update --remote
-    - name: Copy submod files
-      uses: snakemake/snakemake-github-action@v1.24.0
-      with:
-        directory: .
-        snakefile: Snakefile
-        args: "--forcerun copy_submod_files -c 1"
+    # - name: Copy submod files
+    #   uses: snakemake/snakemake-github-action@v1.24.0
+    #   with:
+    #     directory: .
+    #     snakefile: Snakefile
+    #     args: "--forcerun copy_submod_files -c 1"
     - name: Commit & Push
       run: |
-        git add _extensions/rackham/
-        git commit -m "🤖 Update extension from submodule" || echo "No changes to commit"
+        git add _extensions/rackham/*.cls _extensions/rackham/*.tex
+        git commit -m "🤖 Update submodule" || echo "No changes to commit"
         git push
