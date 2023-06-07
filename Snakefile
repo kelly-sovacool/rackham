@@ -7,7 +7,7 @@ rule copy_submod_files:
         tex_cls=f"{SUBMOD_DIR}/thesis-umich.cls",
         pkgs=f"{SUBMOD_DIR}/packages.tex"
     output:
-        tex_cls=f"{EXT_DIR}/thesis-umich.cls",
+        tex_cls=f"{EXT_DIR}/thesis-umich_copy.cls",
         pkgs=f"{EXT_DIR}/packages.tex"
     params:
         ext_dir=EXT_DIR
