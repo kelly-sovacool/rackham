@@ -46,3 +46,4 @@ Take a look at `_quarto.yml` for examples of all the format options you can set.
 
 Preview the rendered template at <http://sovacool.dev/rackham/dissertation.pdf>
 
+See my actual dissertation as a full-featured example: <https://github.com/kelly-sovacool/phd-diss>
