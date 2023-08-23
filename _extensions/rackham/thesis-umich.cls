@@ -182,6 +182,9 @@
 % This package is used for the list of abbreviations
 \RequirePackage{acronym}
 
+% This package is used to support item list customization (for list of symbols)
+\RequirePackage{enumitem}
+
 % This package is for the index, if it is to be used.
 \if@umich@index
  \RequirePackage{makeidx}
@@ -839,7 +842,7 @@
 \newcommand{\showlistofappendices}{\@umich@listofappendicestrue}
 \newcommand{\showlistofabbreviations}{\@umich@listofabbrevstrue}
 \newcommand{\showlistofacronyms}{\@umich@listofacronymstrue}
-\newcommand{\showlistofsymbos}{\@umich@listofsymbolstrue}
+\newcommand{\showlistofsymbols}{\@umich@listofsymbolstrue}
 
 % Commands to hide each of the lists
 \newcommand{\hidelistoffigures}{\@umich@listoffiguresfalse}
@@ -850,7 +853,7 @@
 \newcommand{\hidelistofappendices}{\@umich@listofappendicesfalse}
 \newcommand{\hidelistofabbreviations}{\@umich@listofabbrevsfalse}
 \newcommand{\hidelistofacronyms}{\@umich@listofacronymsfalse}
-\newcommand{\hidelistofsymbos}{\@umich@listofsymbolsfalse}
+\newcommand{\hidelistofsymbols}{\@umich@listofsymbolsfalse}
 
 
 %% ---- TENTS ----------------------------------------------
@@ -1091,6 +1094,7 @@
 %% ---- LIST OF APPENDICES ---------------------------------------------
 % This sets the formatting for appendices in the list.
 \newcommand*{\l@appendix}{\@dottedtocline{1}{0em}{2.5em}}
+\renewcommand*{\l@section}{\@dottedtocline{1}{\@pnumwidth}{2.5em}}
 
 % This sets the formatting of the list of appendices page.
 \newcommand*{\listofappendices}{%
@@ -1131,11 +1135,13 @@
  % Add the page to the table of contents.
  \addcontentsline{toc}{backchapter}{Appendices}
  % Stop adding sections to the table of contents.
- \addtocontents{toc}{\setcounter{tocdepth}{1}} %
+ \addtocontents{toc}{\setcounter{tocdepth}{0}} %
  % Header for appendices.
  \renewcommand{\@chapapp}{APPENDIX} %
  % Renew the chapter and section labels.
  \let\@chapter\@chapter@appendix %
+ % Renew the command for sections in the appendices.
+ \renewcommand{\section}{\@section@appendix}
 }
 
 % Make a special chapter command for appendices.
@@ -1148,8 +1154,10 @@
  \phantomsection %
  % Add a bookmark manually.
  \pdfbookmark[0]{#1}{#2} %
+ % Add sections to the table of contents.
+ \addtocontents{loa}{\setcounter{tocdepth}{1}} %
  % Add to the list of appendices rather than toc.
- \addcontentsline{loa}{chapter}{\protect\numberline{\thechapter}#1} %
+ \addcontentsline{loa}{chapter}{\protect\numberline{\thechapter}\space#1} %
  % Save the chapter number.
  \chaptermark{#1} %
  % Add extra space to the lists of figures and tables and maps.
@@ -1165,6 +1173,26 @@
   \@makechapterhead{#2} %
   \@afterheading %
  \fi }
+
+% Make a special section command for the appendices.
+\def\@section@appendix#1{
+  % Begin the phantom section to accommodate hyperref package
+  \phantomsection
+  % Add a bookmark manually.
+  \pdfbookmark[1]{#1}{#1} %
+  % Add to list of appendices
+  \addcontentsline{loa}{section}{#1}
+  % Save the section number
+  \sectionmark{#1}
+  % Issue the start section command
+  \@startsection{section} % Use the default formatting settings
+    {1} %
+    {0pt} %
+    {-3.5ex plus -1ex minus -0.2ex} %
+    {2.3ex plus 0.2ex} %
+    {\normalfont\Large\bfseries}
+    {#1} % Add the section title text
+  }
 
 
 %% ---- LIST OF ABBREVIATIONS ------------------------------------------
@@ -1277,9 +1305,9 @@
  \vspace{1ex} %
  % Start the automatic symbols feature.
  \begin{singlespace} %
-  \begin{acronym} %
+  \begin{itemize}[labelwidth={3em}, align=left, leftmargin=3.5em] %
    \@symbols %
-  \end{acronym} %
+  \end{itemize} %
  \end{singlespace} %
 }
 
@@ -1381,6 +1409,8 @@
  \clearpage %
  % Create a pdf anchor.
  \phantomsection %
+ % Make sure to counter depth is correct so bibliography gets added to the table of contents.
+ \addtocontents{toc}{\setcounter{tocdepth}{1}} %
  % Add blank space to table of contents
  \addtocontents{toc}{\vspace{1.3ex}}
  % Add to table of contents.
