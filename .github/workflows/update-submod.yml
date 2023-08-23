@@ -1,5 +1,6 @@
 name: Update submodule
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 1 * * 1"
   push:
@@ -31,7 +32,7 @@ jobs:
       with:
         directory: .
         snakefile: Snakefile
-        args: "--forcerun copy_submod_files -c 1"
+        args: "copy_submod_files --forcerun copy_submod_files -c 1"
     - name: Commit & Push
       run: |
         git add _extensions/rackham/
