@@ -10,6 +10,8 @@ formatting guidelines.
 
 ## Installing
 
+You will first need to install [quarto](https://quarto.org/).
+
 ### For a new document
 
 You can use this as a template to create a new dissertation.
